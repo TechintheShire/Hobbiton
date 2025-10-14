@@ -14,7 +14,7 @@
   <img src="./Icons%20and%20Screenshots/20251007_115237.png" height="170"/>
 </a>
 
-# How to deploy Ollama and OpenWebUI in Docker
+# How to deploy Ollama and Open WebUI in Docker
 
 <!--
 YouTube <br>
