@@ -1,20 +1,11 @@
-<a href="./Icons%20and%20Screenshots/20251007_115914.png">
-  <img src="./Icons%20and%20Screenshots/20251007_115914.png" height="170"/>
-</a>
 
-<a href="./Icons%20and%20Screenshots/20250805_100334.png">
-  <img src="./Icons%20and%20Screenshots/20250805_100334.png" height="170"/>
-</a>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(5)%20-%20NVIDIA.png"/> <br>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(4)%20-%20Open%20WebUI.png"/> <br>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(3)%20-%20Ollama.png"/> <br>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(2)%20-%20Docker.png"/> <br>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(1)%20-%20Ubuntu.png"/> <br>
 
-<a href="./Icons%20and%20Screenshots/20251007_114425.png">
-  <img src="./Icons%20and%20Screenshots/20251007_114425.png" height="170"/>
-</a>
-
-<a href="./Icons%20and%20Screenshots/20251007_115237.png">
-  <img src="./Icons%20and%20Screenshots/20251007_115237.png" height="170"/>
-</a>
-
-# How to deploy Ollama and Open WebUI in Docker
+## How to deploy Ollama and Open WebUI in Docker (NVIDIA GPU)
 
 <!--
 YouTube <br>
@@ -26,7 +17,7 @@ Rumble <br>
 ***
 -->
 
-### Recommended Operating System / Docker Image(s) 
+### Recommended Operating System / Docker Image(s) / NVIDIA GPUs
 
 <table>
   <tr>
@@ -45,54 +36,37 @@ Rumble <br>
     <td align="right">Model Runtime / Backend Engine</td>
     <td>Ollama <br> https://github.com/ollama/ollama <br> https://hub.docker.com/r/ollama/ollama</td>
   </tr>
+  <tr>
+    <td align="right">Supported NVIDIA GPUs</td>
+    <td>https://docs.ollama.com/gpu#nvidia</td>
+  </tr>
 </table>
 
-> ⚠️ Ubuntu 22.04 is strongly recommended because provides official support for the NVIDIA Container Toolkit, which allows us to share our NVIDIA GPU wiht Docker containers. Official support for Ubuntu 24.04 is still under development. <br>
+> ⚠️ Ubuntu 22.04 is strongly recommended when using the `NVIDIA Container Toolkit`. Ubuntu 24.04 is claimed to be supported; however, there are many known issues and functionality/stability concerns. <br>
 
 > ℹ️ If you need help deploying Docker/Docker Compose, please see my guide here, [How to install Docker and Docker Compose](../../03.%20Virtual%20Machines%20%26%20Containers/How%20to%20install%20Docker%20and%20Docker%20Compose/How%20to%20install%20Docker%20and%20Docker%20Compose.md). <br>
 
-### My Hardware Specs
-
-&emsp; I share this information to prove that you don't need an expensive or complex build to get started with running and leanring AI. <br>
-
-<table>
-  <tr>
-    <td align="right">Motherboard</td>
-    <td>ASUS TUF B450M-PLUS GAMING</td>
-    <td><code>sudo dmidecode -t baseboard</code></td>
-  </tr>
-<tr>
-<td align="right">Processor</td>
-<td>AMD Ryzen 7 1700 8C/16T, 3.0 GHz (3.7 GHz Boost)</td>
-<td><code>sudo dmidecode -t processor</code><br> <code>lscpu</code></td> 
-</tr>
-<tr>
-<td align="right">DRAM Memory</td>
-<td>64 GiB DRAM Memory 2133 MT/s (4x 16 GiB DIMMs)</td>
-<td><code>sudo dmidecode -t memory</code></td>
-</tr>
-<tr>
-<td align="right">VRAM GPU</td>
-<td>NVIDIA GeForce RTX 2060 6 GiB VRAM</td>
-<td><code>nvidia-smi</code><br> <code>sudo lshw -C display</code><br> <code>lspci | grep -i vga</code></td>
-</tr>
-  <tr>
-<td align="right">Storage</td>
-<td>4x 500GB SATA SSDs in a RAID 10 via Linux software RAID (mdadm)</td>
-<td><code>cat /proc/mdstat</code></td>
-</tr>
-</table>
-<br>
-
-## [1] Prepare your NVIDIA GPU and Software
-
-### [1.1] Install NVIDIA Driver
 ***
 
-&emsp; Verify which NVIDIA drivers are available on your system; install the 'recommended' version. If you're using a recent version of Ubuntu, NVIDIA drivers are pre-bundled with the OS and can be installed using `apt`. <br>
-<br>
+### Table of Contents
 
-&emsp; List the available drivers on your system. <br>
+[1] GPU Setup <br>
+[2] Create a Shared Docker Network <br>
+[3] Deploy Ollama (Backend) <br>
+[4] Deploy Open WebUI (Frontend) <br>
+[5] Managing Models with Ollama <br>
+[6] Upgrading Ollama and Open WebUI <br>
+[7] Troubleshooting (Common Issues & Fixes) <br>
+
+***
+
+### [1] GPU Setup; NVIDIA
+
+&emsp; **[1.1] Install NVIDIA Driver**
+
+> ℹ️ Ubuntu ships with a **meta-package** to help list/display available drivers for NVIDIA GPUs within Ubuntu's APT repository. For this reason, we can list and then install our driver without needing to download anything external. <br>
+
+&emsp; List available NVIDIA drivers: <br>
 ```bash
 ubuntu-drivers devices
 ```
@@ -120,35 +94,35 @@ driver : nvidia-driver-545 - distro non-free
 driver : nvidia-driver-535 - distro non-free 
 driver : nvidia-driver-580-server-open - distro non-free 
 driver : nvidia-driver-450-server - distro non-free 
-driver : nvidia-driver-580 - distro non-free recommended     # THIS WOULD BE THE DRIVER I WOULD WANT TO INSTALL ON MY SYSTEM.
+driver : nvidia-driver-580 - distro non-free recommended     # 'recommended' WOULD BE THE DRIVER YOU WANT TO INSTALL.
 driver : nvidia-driver-545-open - distro non-free 
 driver : nvidia-driver-535-open - distro non-free 
 driver : xserver-xorg-video-nouveau - distro free builtin
 ```
-<br>
-
-&emsp; Install the recommended NVIDIA driver for your GPU. In my case, it was `nvidia-driver-580`.
+&emsp; Install the 'recommended' NVIDIA driver listed from your output: <br>
+> ℹ️ For my machine `nvidia-driver-580` was recommended. <br>
 ```bash
 sudo apt install -y nvidia-driver-580
 ```
 <br>
 
-### [1.2] Reboot
 ***
 
-&emsp; Reboot and verify the NVIDIA driver installed successfully. <br> 
-<br>
+&emsp; **[1.2] Reboot and Verify**
 
-&emsp; List your NVIDIA GPU information, look for 'Driver Version'. <br>
+&emsp; Reboot: <br>
+```bash
+sudo shutdown -r now
+```
+&emsp; Verify your NVIDIA driver: <br>
 ```bash
 nvidia-smi
 ```
-&emsp; Example Output:
+&emsp; Example Output: <br>
 ```bash
-wraith@wraith:~$ nvidia-smi
 Thu Sep 18 13:30:11 2025       
 +-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
+| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     | # See 'Driver Version: 580.65.06'
 +-----------------------------------------+------------------------+----------------------+
 | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
@@ -170,36 +144,35 @@ Thu Sep 18 13:30:11 2025
 ```
 <br>
 
-### [1.3] Install the NVIDIA Container Toolkit
 ***
 
-&emsp; Because we're using Docker, we'll want to install the NVIDIA Container Toolkit, which will allow us to share our GPU with Docker containers. <br>
-<br>
+&emsp; **[1.3] Install NVIDIA Container Toolkit**
 
-&emsp; Install the NVIDIA Container Toolkit repository. <br>
+&emsp; Add the NVIDIA Container Toolkit repository: <br>
 ```bash
-curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit.gpg
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | \
+sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit.gpg
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
-  sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit.gpg] https://#g' | \
-  sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-```
-```bash
+sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit.gpg] https://#g' | \
+sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 sudo apt update
 ```
-<br>
-
-&emsp; Install the NVIDIA Container Toolkit. <br>
+&emsp; Install the NVIDIA Container Toolkit: <br>
 ```bash
 sudo apt install -y nvidia-container-toolkit
 ```
+&emsp; Verify the NVIDIA Container Toolkit install: <br>
+```bash
+nvidia-container-cli --version
+```
 <br>
 
-### [1.4] (Optional but Recommended) Install the NVIDIA CUDA Toolkit
 ***
 
-&emsp; Benefits of using NVIDIA CUDA Toolkit <br>
+&emsp; **[1.4] (Optional) Install CUDA Toolkit**
 
+&emsp; Benefits of using NVIDIA CUDA Toolkit: <br>
 <table>
   <tr>
     <td align="right">Inference Speed</td>
@@ -223,80 +196,61 @@ sudo apt install -y nvidia-container-toolkit
     <td>🔥 Flash Attention support</td>
   </tr>
 </table>	
-</br>
 
-&emsp; Verify your NVIDIA GPU is CUDA-capable. <br>
+&emsp; Verify your NVIDIA GPU is CUDA-capable: <br>
 ```bash
 lspci | grep -i nvidia
 ```
-<br>
-
-&emsp; Add the NVIDIA CUDA Toolkit repository. <br>
+&emsp; Add the NVIDIA CUDA Toolkit repository: <br>
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
-```
-```bash
 sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
-```
-```bash
 sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/3bf863cc.pub
-```
-```bash
 sudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/ /"
-```
-```bash
 sudo apt update
 ```
-<br>
-
-&emsp; Install the NVIDIA CUDA Toolkit.
+&emsp; Install the NVIDIA CUDA Toolkit: <br>
 ```bash
-sudo apt install nvidia-cuda-toolkit
+sudo apt install -y nvidia-cuda-toolkit
 ```
-<br>
-
-&emsp; Verify the NVIDIA CUDA Toolkit installed successfully.
+&emsp; Verify the NVIDIA CUDA Toolkit install: <br>
 ```bash
 nvcc --version
 ```
 <br>
 
-## [2] Create a shared Docker network for Ollama and Open WebUI to use.
+***
 
-&emsp; This command creates a Docker network, which will be shared by Ollama and Open WebUI for API communication. <br>
+### [2] Create a Shared Docker Network
+
+&emsp; Create a Docker network to be used by Ollama and Open WebUI: <br>
 ```bash
 sudo docker network create ollama-net
 ```
+&emsp; This network lets Ollama and Open WebUI communicate internally. <br>
 <br>
 
-## [3] Deploy Ollama (Backend) in Docker
+***
 
-&emsp; Create directories/mount points for our Ollama Docker container. <br>
-```bash
-mkdir -p ~/ollama
-```
+### [3] Deploy Ollama (Backend)
+
+&emsp; Create directories for Ollama: <br>
 ```bash
 mkdir -p ~/ollama/ollama
 ```
+&emsp; cd (Change Directory) into our base-Ollama directory: <br>
 ```bash
 cd ~/ollama
 ```
-<br>
-
-&emsp; Create a Docker Compose yml (yaml) file for Ollama.
-```bash
-touch docker-compose.yml
-```
-<br>
-
-&emsp; Open the Docker Compose yml file and paste the example below.
+&emsp; Create a Docker Compose file for Ollama: <br>
 ```bash
 nano docker-compose.yml
 ```
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+<br>
 
-&emsp; Example File: <br>
-> ℹ️ Be sure to replace the /home/user directory with your own. <br>
+&emsp; Copy and paste the following into your docker-compose.yml file. <br>
+&emsp; NVIDIA GPU Example: <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
 ```bash
 services:
   ollama:
@@ -305,7 +259,7 @@ services:
     ports:
       - "11434:11434"
     volumes:
-      - /home/thomas@spartan23.home/ollama/ollama:/root/.ollama
+      - /home/username/ollama/ollama:/root/.ollama
     deploy:
       resources:
         reservations:
@@ -324,57 +278,47 @@ networks:
 <br>
 
 &emsp; Deploy Ollama: <br>
-```
-cd ~/ollama
-```
 ```bash
 sudo docker compose up -d
 ```
+&emsp; Verify Docker container 'ollama' is running: <br>
 ```bash
 sudo docker ps
 ```
 <br>
 
-## [4] Install Open WebUI (Frontend)
+***
 
-&emsp; Create directories/mount points for our Open WebUI Docker container. <br>
-```bash
-mkdir -p ~/open-webui
-```
+### [4] Deploy Open WebUI (Frontend)
+
+&emsp; Create directories for Open WebUI: <br>
 ```bash
 mkdir -p ~/open-webui/data
 ```
+&emsp; cd (Change Directory) into our base-Open WebUI directory: <br>
 ```bash
 cd ~/open-webui
 ```
-<br>
-
-&emsp; Create a Docker Compose yml (yaml) file for Open WebUI.
-```bash
-touch docker-compose.yml
-```
-<br>
-
-&emsp; Open the Docker Compose yml file and paste the example below.
+&emsp; Create a Docker Compose file for Open WebUI: <br>
 ```bash
 nano docker-compose.yml
 ```
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+<br>
 
-&emsp; Example File: <br>
-> ℹ️ Be sure to replace the /home/user directory with your own. <br>
+&emsp; Copy and paste the following into your docker-compose.yml file: <br>
+&emsp; NVIDIA GPU Example: <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
 ```bash
 services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:cuda
     container_name: open-webui
     volumes:
-      - /home/thomas@spartan23.home/open-webui/data:/app/backend/data
+      - /home/username/open-webui/data:/app/backend/data
     ports:
-      - ${OPEN_WEBUI_PORT-3000}:8080
+      - "3000:8080"
     environment:
-      - 'OLLAMA_BASE_URL=http://ollama:11434'
-      - 'WEBUI_SECRET_KEY='
+      - OLLAMA_BASE_URL=http://ollama:11434
     restart: unless-stopped
     networks:
       - ollama-net
@@ -394,108 +338,92 @@ networks:
 
 &emsp; Deploy Open WebUI: <br>
 ```bash
-cd ~/open-webui
-```
-```bash
 sudo docker compose up -d
 ```
+&emsp; Verify Docker container 'open-webui' is running: <br>
+```bash
+sudo docker ps
+```
 <br>
 
-&emsp; Access Open WebUI via one of the following URLs: <br>
-`http://localhost:3000` <br>
-`http://ipAddress:3000/` <br>
+&emsp; Access the UI: <br>
+`http://localhost:3000` or `http://<ip-address>:3000` <br>
 <br>
 
-&emsp; Example: <br>
-`http://192.168.50.20:3000/` <br>
-<br>
+***
 
-&emsp; Once Open WebUI has loaded, you will be prompted to create an administrator account (username / password). <br>
-<br>
+### [5] Managing Models with Ollama
 
-## [5] Managing Models with Ollama
+> ℹ️ Models can also be managed via Open WebUI → Admin Panel → Settings → Connections (or Models). <br>
 
-&emsp; Available models: https://ollama.com/library <br>
-<br>
-
-> ℹ️ **Note** You can also manage Ollama models within Open WebUI. <br>
-> &emsp; > Select your user profile icon in the upper right-hand of the screen (or bottom left-hand of the screen). <br>
-> &emsp; > Select 'Admin Panel'. <br>
-> &emsp; > Select the 'Settings' tab along the top. <br>
-> &emsp; > Select 'Connections' from the menu on the left. <br>
-> &emsp; > Locate your Ollama API. On the right, select the 'downward arrow over the flat line' to 'Manage' Ollama models. <br>
-<br>
-
-&emsp; Because we're using Docker to host Ollama, we need to pass any Ollama CLI commands through Docker and into the Ollama Docker container. <br>
-<br> 
-
-&emsp; List models currently on your system: <br>
+&emsp; List models: <br>
 ```bash
 sudo docker exec ollama ollama list
 ```
-<br>
-
-&emsp; Pull (download) new models: <br>
-&emsp; Syntax: <br>
-```bash
-sudo docker exec ollama ollama pull <model>:<tag>
-```
-&emsp; Example Command: <br>
+&emsp; Pull a model Example: <br>
 ```bash
 sudo docker exec ollama ollama pull tinyllama:1.1b
 ```
-<br>
-
-&emsp; Remove (delete) a model from your system: <br>
-&emsp; Syntax: <br>
-```bash
-sudo docker exec ollama ollama rm <model>:<tag>
-```
-&emsp; Example Command: <br>
+&emsp; Remove a model Example: <br>
 ```bash
 sudo docker exec ollama ollama rm tinyllama:1.1b
 ```
 <br>
+
+&emsp; To open a CLI session directly within the ollama Docker container:
+```bash
+sudo docker exec -it ollama bash
+```
+&emsp; While in the CLI session, you no longer need the `sudo docker exec` prefix. You can use `ollama <command>`. <br>
+> ℹ️ Use `/bye` and/or `exit` to exit out of the CLI session. <br>
 <br>
 
-## Upgrade Ollama
+***
 
+### [6] Upgrading Ollama and Open WebUI
+
+&emsp; Upgrade Ollama (NVIDIA GPU): <br>
 ```bash
 sudo docker pull ollama/ollama
-```
-```bash
 cd ~/ollama
-```
-```bash
 sudo docker compose down
-```
-```bash
 sudo docker compose up -d
 ```
-<br>
-
-## Upgrade Open WebUI
-
+&emsp; Upgrade Open WebUI (NVIDIA GPU): <br>
 ```bash
 sudo docker pull ghcr.io/open-webui/open-webui:cuda
-```
-```bash
 cd ~/open-webui
-```
-```bash
 sudo docker compose down
-```
-```bash
 sudo docker compose up -d
 ```
 <br>
 
-## "Uninstall" Ollama
+***
 
-TBD... <br>
-<br>
+### [7] Troubleshooting (Common Issues & Fixes)
 
-## "Uninstall" Open WebUI
+| Issue                                   | Cause                                         | Fix                                                                                                                                     |
+| --------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Docker can’t see GPU**                | Missing container toolkit (NVIDIA)            | Re-run install for `nvidia-container-toolkit` and restart Docker                                                                        |
+| **`nvidia-smi` not found in container** | Container missing NVIDIA runtime mounts       | Ensure you’re using the `nvidia` driver block and `--gpus all` runtime if manual                                                        |
+| **UI loads but models don’t respond**   | Backend Ollama not reachable                  | Confirm network `ollama-net` exists and `OLLAMA_BASE_URL` set correctly                                                                 |
+| **High CPU usage / no GPU load**        | Model running on CPU fallback                 | For NVIDIA, verify `nvidia-smi` shows active process                                                                                    |
+| **Open WebUI crashes on startup**       | Missing database directory or permissions     | Ensure `~/open-webui/data` exists and is writable by Docker user                                                                        |
 
-TBD... <br>
-<br>
+> 💡 Tip: Verify GPU usage directly inside the container: <br>
+> NVIDIA → `sudo docker exec -it ollama nvidia-smi` <br>
+
+> ✅ Summary
+> - Ubuntu 22.04 LTS remains the most stable base for NVIDIA GPUs.
+> - Use ollama/ollama for NVIDIA.
+> - Verify with nvidia-smi.
+
+<!--
+### [8] Uninstalling Ollama and Open WebUI
+
+<put steps here>
+
+-->
+
+
+
