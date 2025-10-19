@@ -34,7 +34,7 @@ Rumble <br>
 
 > ℹ️ **Note** <br>
 > 
-> If you need help deploying Ubuntu Desktop, please see my guide here, [How to install Ubuntu Desktop 24.04.2 LTS](../../01.%20Operating%20Systems/How%20to%20install%20Ubuntu%20Desktop%2024.04.2%20LTS/How%20to%20install%20Ubuntu%20Desktop%2024.04.2%20LTS.md). <br>
+> If you need help deploying Ubuntu Desktop, please see my guide here, [How to install Ubuntu Desktop 24.04.3 LTS](../../01.%20Operating%20Systems/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS.md). <br>
 > If you need help deploying Docker/Docker Compose, please see my guide here, [How to install Docker and Docker Compose](../../03.%20Virtual%20Machines%20%26%20Containers/How%20to%20install%20Docker%20and%20Docker%20Compose/How%20to%20install%20Docker%20and%20Docker%20Compose.md). <br>
 
 ## Install and Configure, Portainer
