@@ -1,4 +1,4 @@
-# How to join Ubuntu Desktop 24.04.2 LTS to a Microsoft Active Directory Domain.
+# How to join Ubuntu Desktop 24.04.3 LTS to a Microsoft Active Directory Domain.
 
 These steps assume your Active Directory (Domain Controller) is already properly setup and running. I'm using Windows Server 2019 and these steps worked every time for me. <br>
 
