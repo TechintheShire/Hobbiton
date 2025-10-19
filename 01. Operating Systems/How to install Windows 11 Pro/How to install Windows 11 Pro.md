@@ -449,7 +449,7 @@ https://rufus.ie/en/#download
 </a><br>
 <br>
 
-&emsp; **[5.1] Enable Remote Desktop access for your non-Administrator user account.** <br>
+&emsp; **[5.2] Enable Remote Desktop access for your non-Administrator user account.** <br>
 
 > ℹ️ During this process, you will be prompted to enter your Administrator user credentials, which is expected. <br>
 
