@@ -93,11 +93,11 @@ username@domain.com
 ```
 
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-07-29%20120809%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-07-29%20120809%20v2.png" height="470"/>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-07-29%20120809%20v2.png" height="270"/>
 </a><br>
 
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-07-29%20120850%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-07-29%20120850%20v2.png" height="470"/>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-07-29%20120850%20v2.png" height="270"/>
 </a><br>
 <br>
 
