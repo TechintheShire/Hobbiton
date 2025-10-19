@@ -28,7 +28,7 @@ Rumble <br>
   </tr>
 </table>
 
-> ℹ️ **Note** If you need help installing Ubuntu, please see our guide here: [How to install Ubuntu Desktop 24.04.2 LTS](../../01.%20Operating%20Systems/How%20to%20install%20Ubuntu%20Desktop%2024.04.2%20LTS/How%20to%20install%20Ubuntu%20Desktop%2024.04.2%20LTS.md).
+> ℹ️ **Note** If you need help installing Ubuntu, please see our guide here: [How to install Ubuntu Desktop 24.04.3 LTS](../../01.%20Operating%20Systems/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS.md).
 <br>
 
 ✅ With this setup: <br>
