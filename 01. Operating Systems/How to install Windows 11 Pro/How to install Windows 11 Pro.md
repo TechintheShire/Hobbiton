@@ -15,15 +15,15 @@ Rumble <br>
 
 ### Table of Contents
 
-[1] Download a free copy of the Windows 11 ISO. <br>
-[2] Install Windows 11 Pro. <br>
-[3] (Optional) Set a static IP address. <br>
-[4] (Optional) Enable 'Network discovery and file sharing'. <br>
-[5] (Optional) Create a non-Administrator user account. <br>
+&emsp; [1] Download a free copy of the Windows 11 ISO. <br>
+&emsp; [2] Install Windows 11 Pro. <br>
+&emsp; [3] (Optional) Set a static IP address. <br>
+&emsp; [4] (Optional) Enable 'Network discovery and file sharing'. <br>
+&emsp; [5] (Optional) Create a non-Administrator user account. <br>
 
-[#] Appendix <br>
-[#] Disable automatic reboots caused by Windows Updates. <br>
-[#] How to join Windows 11 Pro to a Microsoft Active Directory Domain. <br>
+&emsp; [#] Appendix <br>
+&emsp; [#] Disable automatic reboots caused by Windows Updates. <br>
+&emsp; [#] How to join Windows 11 Pro to a Microsoft Active Directory Domain. <br>
 
 ***
 
