@@ -1,12 +1,6 @@
-<a href="./Icons%20and%20Screenshots/20250805_110313.png">
-  <img src="./Icons%20and%20Screenshots/20250805_110313.png" height="170"/>
-</a>
-<a href="./Icons%20and%20Screenshots/20250805_100334.png">
-  <img src="./Icons%20and%20Screenshots/20250805_100334.png" height="170"/>
-</a>
-<a href="./Icons%20and%20Screenshots/20250910_112901.png">
-  <img src="./Icons%20and%20Screenshots/20250910_112901.png" height="170"/>
-</a>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(3)%20-%20Apache%20Guacamole.png"/> <br>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(2)%20-%20Docker.png"/> <br>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(1)%20-%20Ubuntu.png"/> <br>
 
 # How to deploy Apache Guacamole in Docker
 
@@ -43,40 +37,40 @@ Instead of manually configuring guacd + webapp + DB + SSL + proxy, you get: <br>
 &emsp; > SSL (self-signed or bring-your-own) <br>
 &emsp; > Session recording <br>
 &emsp; > Stable, pinned versions <br>
-<br>
 
 > ℹ️ **Note** <br>
 > 
 > If you need help deploying Ubuntu Desktop, please see my guide here, [How to install Ubuntu Desktop 24.04.3 LTS](../../01.%20Operating%20Systems/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS.md). <br>
 > If you need help deploying Docker/Docker Compose, please see my guide here, [How to install Docker and Docker Compose](../../03.%20Virtual%20Machines%20%26%20Containers/How%20to%20install%20Docker%20and%20Docker%20Compose/How%20to%20install%20Docker%20and%20Docker%20Compose.md). <br>
-<br>
 
 ## Deploy Apache Guacamole in Docker
 
+***
+
 ### [1] Clone boschkundendienst's GitHub repository to your local machine.
 
-&emsp; > The following commands will clone `boschkundendienst`'s GitHub repository to you local machine and navigate into the 'guacamole-docker-compose' directory. <br>
+&emsp; > The following commands will clone `boschkundendienst`'s GitHub repository to your local machine and navigate into the 'guacamole-docker-compose' directory. <br>
 ```bash
 git clone "https://github.com/boschkundendienst/guacamole-docker-compose.git" && cd guacamole-docker-compose
 ```
-</a>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20161014%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20161014%20v2.png" height="470"/>
-</a>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20161014%20v2.png" height="270"/>
+</a><br>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20161037%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20161037%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20161037%20v2.png" height="270"/>
+</a><br>
+
+***
 
 ### [2] Make a backup copy of the docker-compose.yml file. 
 ```bash
 cp docker-compose.yml docker-compose.yml_$(date +%Y.%m.%d_%H-%M-%S)
 ```
-</a>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164341%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164341%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164341%20v2.png" height="270"/>
+</a><br>
+
+***
 
 ### [3] Secure the docker-compose.yml file.
 
@@ -84,11 +78,11 @@ cp docker-compose.yml docker-compose.yml_$(date +%Y.%m.%d_%H-%M-%S)
 ```bash
 sudo chown root:root docker-compose.yml && sudo chmod 600 docker-compose.yml
 ```
-</a>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164421%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164421%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164421%20v2.png" height="270"/>
+</a><br>
+
+***
 
 ### [4] Modify the docker-compose.yml file.
 
@@ -97,18 +91,17 @@ sudo chown root:root docker-compose.yml && sudo chmod 600 docker-compose.yml
 ```bash
 sudo nano docker-compose.yml
 ```
-</a>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164422%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164422%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164422%20v2.png" height="270"/>
+</a><br>
 <br>
 
 Example of `POSTGRES_PASSWORD:`. Don't forget to scroll down and also enter a password for `POSTGRESQL_PASSWORD:`:
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164600%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164600%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164600%20v2.png" height="270"/>
+</a><br>
+
+***
 
 ### [5] Deploy Apache Guacamole in Docker.
 
@@ -126,76 +119,71 @@ sudo docker compose up -d
 >
 > `docker-compose` = Using Ubuntu repos. <br>
 > `docker compose` = Using Official Docker repos.
-</a>
-<a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164719%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164719%20v2.png" height="470"/>
-</a>
-</a>
-<a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164919%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164919%20v2.png" height="470"/>
-</a>
-<br>
 
-### [6] Log into Apache Guacamole.
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164719%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164719%20v2.png" height="270"/>
+</a><br>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164919%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20164919%20v2.png" height="270"/>
+</a><br>
+
+***
+
+### [6] Log in to Apache Guacamole.
 ```bash
 https://ipAddress:8443/
 ```
 Default username is `guacadmin` <br>
 Default password is `guacadmin` <br>
 <br>
-</a>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165333%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165333%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165333%20v2.png" height="270"/>
+</a><br>
 
 &emsp; > Update/change the default password for guacadmin. <br>
 &emsp;&emsp; > Select the dropdown menu for 'guacadmin' in the upper right-hand corner. <br>
-&emsp;&emsp; > Select 'Settings'. <br>
-&emsp;&emsp; > Select 'Preferences'. <br>
-&emsp;&emsp; > Scroll down to view 'CHANGE PASSWORD'. Here is where you can enter the relevant current and new password information. <br>
-&emsp;&emsp; > When finished, select 'Update Password'. <br>
+&emsp;&emsp; > Select '`Settings`'. <br>
+&emsp;&emsp; > Select '`Preferences`'. <br>
+&emsp;&emsp; > Scroll down to view '`CHANGE PASSWORD`'. Here is where you can enter the relevant current and new password information. <br>
+&emsp;&emsp; > When finished, select '`Update Password`'. <br>
 &emsp;&emsp; > [*Optional*] Log out and then log back in with your new guacadmin password. <br>
 <br>
-</a>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165349%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165349%20v2.png" height="470"/>
-</a>
-</a>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165349%20v2.png" height="270"/>
+</a><br>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165430%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165430%20v2.png" height="470"/>
-</a>
-</a>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165430%20v2.png" height="270"/>
+</a><br>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165442%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165442%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165442%20v2.png" height="270"/>
+</a><br>
 
 &emsp; > [*Optional*] Create a 'standard' (non-admin) level account for daily use. <br>
 &emsp;&emsp; > Select the dropdown menu for 'guacadmin' in the upper right-hand corner. <br>
-&emsp;&emsp; > Select 'Settings'. <br>
-&emsp;&emsp; > Select 'Users'. <br>
-&emsp;&emsp; > Select 'New User'. <br>
+&emsp;&emsp; > Select '`Settings`'. <br>
+&emsp;&emsp; > Select '`Users`'. <br>
+&emsp;&emsp; > Select '`New User`'. <br>
 &emsp;&emsp;&emsp; > Enter your desired username and password information. <br>
 &emsp;&emsp;&emsp; > Enable the following permissions: <br>
-&emsp;&emsp;&emsp;&emsp; > Create new connections <br>
-&emsp;&emsp;&emsp;&emsp; > Create new connection groups <br>
-&emsp;&emsp;&emsp;&emsp; > Change own password <br>
+&emsp;&emsp;&emsp;&emsp; > '`Create new connections`' <br>
+&emsp;&emsp;&emsp;&emsp; > '`Create new connection groups`' <br>
+&emsp;&emsp;&emsp;&emsp; > '`Change own password`' <br>
 <br>
-</a>
+
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165547%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165547%20v2.png" height="470"/>
-</a>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165547%20v2.png" height="270"/>
+</a><br>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165603%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165603%20v2.png" height="470"/>
-</a>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165603%20v2.png" height="270"/>
+</a><br>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165633%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165633%20v2.png" height="470"/>
-</a>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165633%20v2.png" height="270"/>
+</a><br>
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165701%20v2.png">
-  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165701%20v2.png" height="470"/>
-</a>
-<br>
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-09%20165701%20v2.png" height="270"/>
+</a><br>
+
+***
 
 ### [7] Created new 'connections' and 'connection groups'.
 
