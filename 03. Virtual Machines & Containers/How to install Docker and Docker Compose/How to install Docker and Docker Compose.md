@@ -79,7 +79,7 @@ sudo docker-compose version
 </details>
 
 ***
-### [Option 2] Install from Docker's official APT repository.
+### [Option 2] (Recommended) Install from Docker's official APT repository.
 
 <details>
   <summary>Expand for additional details.</summary>
