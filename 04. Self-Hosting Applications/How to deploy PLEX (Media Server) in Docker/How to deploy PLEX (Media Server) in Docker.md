@@ -885,6 +885,8 @@ Once the library has been added, PLEX will start to scan the folder locations yo
 &emsp;&emsp; > Select '`Save Changes`'. <br>
 <br>
 
+## Appendix
+
 ***
 
 ### Upgrading PLEX (Docker version)
