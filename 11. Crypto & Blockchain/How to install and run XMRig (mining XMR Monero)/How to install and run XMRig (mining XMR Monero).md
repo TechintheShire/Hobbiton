@@ -1,11 +1,7 @@
-<a href="./Icons%20and%20Screenshots/20250805_110313.png">
-  <img src="./Icons%20and%20Screenshots/20250805_110313.png" height="170"/>
-</a>
-<a href="./Icons%20and%20Screenshots/20250915_001213.png">
-  <img src="./Icons%20and%20Screenshots/20250915_001213.png" height="170"/>
-</a>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(2)%20-%20XMRig.png"/> <br>
+<img src="./Icons%20and%20Screenshots/152025114633%20v2%20-%20(1)%20-%20Ubuntu.png"/> <br>
 
-# How to install and run XMRig (mining XMR Monero)
+## How to install and run XMRig (mining XMR Monero)
 
 <!--
 YouTube <br>
@@ -15,7 +11,19 @@ Rumble <br>
 <br>
 -->
 
-## Recommended Operating System / Software
+***
+
+### Table of Contents
+
+&emsp; [1] Install XMRig. <br>
+&emsp; [2] Create an XMRig Config File. <br>
+&emsp; [3] Create a Systemd Service to run XMRig as a Service. <br>
+&emsp; [4] Enable and Start the XMRig Service. <br>
+&emsp; [5] Create an automated Upgrade Script. <br>
+
+***
+
+### Recommended Operating System / Software
 
 <table>
   <tr>
@@ -28,34 +36,30 @@ Rumble <br>
   </tr>
 </table>
 
-> ℹ️ **Note** If you need help installing Ubuntu, please see our guide here: [How to install Ubuntu Desktop 24.04.3 LTS](../../01.%20Operating%20Systems/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS.md).
-<br>
+> ℹ️ If you need help installing Ubuntu, please see our guide here: [How to install Ubuntu Desktop 24.04.3 LTS](../../01.%20Operating%20Systems/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS/How%20to%20install%20Ubuntu%20Desktop%2024.04.3%20LTS.md). <br>
 
 ✅ With this setup: <br>
 - XMRig runs as a background service. <br>
 - It restarts automatically on crash. <br>
 - It auto-starts at boot. <br>
 - Updating is done with one command. <br>
-<br>
 
-## ⛏️ Step 1: Install XMRig
+***
+### ⛏️ [1] Install XMRig.
 
-<details>
-  <summary>Expand for additional details.</summary>
-
-### Update System
+&emsp; Update System: <br>
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-### Install Dependencies
+&emsp; Install Dependencies: <br>
 
 ```bash
 sudo apt install git build-essential cmake automake libtool autoconf libhwloc-dev libuv1-dev libssl-dev -y
 ```
 
-### Clone XMRig
+&emsp; Clone XMRig: <br>
 
 ```bash
 git clone https://github.com/xmrig/xmrig.git
@@ -66,31 +70,27 @@ cd xmrig
 
 ***
 
-### (Optional) Modify the donation level.
+&emsp; **(Optional) Modify the donation level.** <br>
 
-Edit the donate.h file to disable the default donation: <br>
-
-Open the src/donate.h file with a text editor: <br>
+&emsp;&emsp; Open the `src/donate.h` file with a text editor: <br>
 
 ```bash
 nano src/donate.h
 ```
+
 > ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
-<br>
 
-Locate the line that defines the default donation level: <br>
-&emsp; `constexpr const int kDefaultDonateLevel = 1;` <br>
-&emsp; `constexpr const int kMinimumDonateLevel = 1;` <br>
-<br>
+&emsp; Locate the line that defines the default donation level: <br>
+&emsp;&emsp; `constexpr const int kDefaultDonateLevel = 1;` <br>
+&emsp;&emsp; `constexpr const int kMinimumDonateLevel = 1;` <br>
 
-Change the value from 1 to 0: <br>
-&emsp; `constexpr const int kDefaultDonateLevel = 0;` <br>
-&emsp; `constexpr const int kMinimumDonateLevel = 0;` <br>
-<br>
+&emsp; Change the value from 1 to 0: <br>
+&emsp;&emsp; `constexpr const int kDefaultDonateLevel = 0;` <br>
+&emsp;&emsp; `constexpr const int kMinimumDonateLevel = 0;` <br>
 
 ***
 
-### Build the XMRig Binary (application software)
+&emsp; Build the XMRig Binary (application software): <br>
 
 ```bash
 mkdir build && cd build
@@ -101,23 +101,18 @@ cmake ..
 ```bash
 make -j$(nproc)
 ```
-<br>
 
-XMRig binary will be at: <br>
-`~/xmrig/build/xmrig`
+&emsp; XMRig binary will be at: `~/xmrig/build/xmrig` <br>
 
-</details>
+***
+### ⛏️ [2] Create an XMRig Config File.
 
-## ⛏️ Step 2: Create an XMRig Config File
+&emsp; Go to the following URL:
 
-<details>
-  <summary>Expand for additional details.</summary>
-<br>
-
-Go to the following URL:
 ```bash
 https://xmrig.com/wizard
 ```
+
 &emsp; > Under 'Start', select 'New configuration'. <br>
 &emsp;&emsp; > Enter your pool (I currently recommend `HashVault.pro`) and wallet address information. <br>
 &emsp; > Select 'Backends' <br>
@@ -128,7 +123,7 @@ https://xmrig.com/wizard
 &emsp; > Select 'Result'. <br>
 &emsp;&emsp; > Download the generated `config.json` file. <br>
 
-> ℹ️ Your config file will start off looking like the following. Once you start XMRig, it'll automatically update your configuration file (see example further down).
+> ℹ️ Your config file will start off looking like the following. Once you start XMRig, it'll automatically update your configuration file (see example further down below).
 
 ```bash
 {
@@ -148,9 +143,8 @@ https://xmrig.com/wizard
 ```
 
 &emsp; > Move this `config.json` file to your `~/xmrig/build` directory, within the same folder as the './xmrig' binary we created. <br>
-<br>
 
-Run XMRig with the following commands and verify you're seeing Hash Rate from your rig in the pool:
+&emsp; > Run XMRig with the following commands and verify you're seeing Hash Rate from your rig in the pool: <br>
 ```bash
 cd ~/xmrig/build/
 ```
@@ -158,8 +152,10 @@ cd ~/xmrig/build/
 ./xmrig -c config.json
 ```
 
-Example of udpated `config.json` file after running XMRig: <br>
+&emsp; Example of updated `config.json` file after running XMRig: <br>
+
 > ℹ️ This output is from a Proxmox Virtual Machine with 8x vCPUs. <br>
+
 ```bash
 {
     "api": {
@@ -323,34 +319,28 @@ Example of udpated `config.json` file after running XMRig: <br>
 }
 ```
 
-</details>
+***
+### ⛏️ [3] Create a Systemd Service to run XMRig as a Service.
 
-## ⛏️ Step 3: Create a Systemd Service to run XMRig as a Service
+&emsp; Once you've confirmed you're able to successfully run the XMRig software and it is producing Hash Rate within the pool, we can run XMRig as a service. <br>
 
-<details>
-  <summary>Expand for additional details.</summary>
-<br>
-
-Once you've confirmed your able to successfully run the XMRig software and it is producing Hash Rate within the pool, we can run XMRig as a service. <br>
-
-Running XMRig as a service has the following benefits. <br>
-&emsp; - Auto-start on boot; Mining starts automatically when the machine boots, even if you don’t log in. <br>
-&emsp; - Automatic restarts on crash; If XMRig crashes, systemd can restart it automatically. <br>
-&emsp; - Significantly reduces downtime and missed mining time. <br>
-&emsp; - Cleaner process management; You don’t need to keep an open terminal session (whether that's via the Desktop or remote SSH session). <br>
-&emsp; - systemctl start xmrig, stop, status, and journalctl -u xmrig give you full control and logs. <br>
-&emsp; - Centralized logging; All XMRig output goes to journalctl, so you don’t lose logs when closing terminals. <br>
-<br>
+> ℹ️ Running XMRig as a service has the following benefits. <br>
+> - Auto-start on boot; Mining starts automatically when the machine boots, even if you don’t log in. <br>
+> - Automatic restarts on crash; If XMRig crashes, systemd can restart it automatically. <br>
+> - Significantly reduces downtime and missed mining time. <br>
+> - Cleaner process management; You don’t need to keep an open terminal session (via Desktop or remote SSH session). <br>
+> - systemctl start xmrig, stop, status, and journalctl -u xmrig give you full control and logs. <br>
+> - Centralized logging; All XMRig output goes to journalctl, so you don’t lose logs when closing terminals. <br>
 
 ```bash
 sudo nano /etc/systemd/system/xmrig.service
 ```
-<br>
 
-Paste: <br>
-🔑 Replace userName / groupName with your Linux username. <br>
+&emsp; Paste the following into the `xmrig.service` file: <br>
 
-Syntax:
+&emsp; Syntax: <br>
+&emsp; 🔑 Replace userName / groupName with your Linux username. <br>
+
 ```bash
 [Unit]
 Description=XMRig Monero Miner
@@ -367,9 +357,8 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 ```
-<br>
 
-Example:
+&emsp; Example: <br>
 ```bash
 [Unit]
 Description=XMRig Monero Miner
@@ -387,32 +376,28 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 ```
 
-</details>
+***
+### ⛏️ [4] Enable and Start the XMRig Service.
 
-## ⛏️ Step 4: Enable & Start the XMRig Service
-
-<details>
-  <summary>Expand for additional details.</summary>
-
-### Reload systemd
+&emsp; Reload systemd: <br>
 
 ```bash
 sudo systemctl daemon-reexec
 ```
 
-### Enable at boot
+&emsp; Enable the XMRig service at boot: <br>
 
 ```bash
 sudo systemctl enable xmrig.service
 ```
 
-### Start miner
+&emsp; Start the XMRig service: <br>
 
 ```bash
 sudo systemctl start xmrig.service
 ```
 
-### Check status/logs
+&emsp; Check status/logs: <br>
 
 ```bash
 systemctl status xmrig.service
@@ -421,23 +406,19 @@ systemctl status xmrig.service
 journalctl -fu xmrig.service
 ```
 
-</details>
+***
+### ⛏️ [5] Create an automated Upgrade Script.
 
-## ⛏️ Step 5: Create an automated Upgrade Script
+&emsp; Create a script to update XMRig + restart service: <br>
 
-<details>
-  <summary>Expand for additional details.</summary>
-<br>
-
-Create a script to update XMRig + restart service: <br>
 ```bash
 sudo nano /usr/local/bin/xmrig-update.sh
 ```
-<br>
 
-Paste: <br>
+&emsp; Paste the following into the `xmrig-update.sh` file: <br>
 
-Syntax: <br>
+&emsp; Syntax: <br>
+
 ```bash
 #!/bin/bash
 set -e
@@ -453,9 +434,9 @@ sudo systemctl restart xmrig.service
 
 echo "[✓] Update complete!"
 ```
-<br>
 
-Example:
+&emsp; Example: <br>
+
 ```bash
 #!/bin/bash
 set -e
@@ -471,17 +452,15 @@ sudo systemctl restart xmrig.service
 
 echo "[✓] Update complete!"
 ```
-<br>
 
-Make it executable: <br>
+&emsp; Make it executable: <br>
+
 ```bash
 sudo chmod +x /usr/local/bin/xmrig-update.sh
 ```
-<br>
 
-Now you can just run: <br>
+&emsp; Now you can just run: <br>
+
 ```bash
 xmrig-update.sh
 ```
-
-</details>
