@@ -78,7 +78,7 @@ cd xmrig
 nano src/donate.h
 ```
 
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 
 &emsp; Locate the line that defines the default donation level: <br>
 &emsp;&emsp; `constexpr const int kDefaultDonateLevel = 1;` <br>
