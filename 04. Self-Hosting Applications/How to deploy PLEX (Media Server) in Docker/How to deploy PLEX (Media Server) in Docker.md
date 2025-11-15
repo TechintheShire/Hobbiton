@@ -221,7 +221,7 @@ sudo apt install cifs-utils keyutils
   </tr>
 </table>
 
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-03%20162020%20v2.png">
   <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-03%20162020%20v2.png" height="270"/>
@@ -434,7 +434,7 @@ touch docker-compose.yml
 nano docker-compose.yml
 ```
 
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 
 <a href="./Icons%20and%20Screenshots/Screenshot%202025-09-03%20163722%20v2.png">
   <img src="./Icons%20and%20Screenshots/Screenshot%202025-09-03%20163722%20v2.png" height="270"/>
