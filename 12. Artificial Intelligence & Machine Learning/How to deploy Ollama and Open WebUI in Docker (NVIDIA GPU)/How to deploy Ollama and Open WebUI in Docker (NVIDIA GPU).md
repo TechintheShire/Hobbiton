@@ -250,7 +250,7 @@ nano docker-compose.yml
 
 &emsp; Copy and paste the following into your docker-compose.yml file. <br>
 &emsp; NVIDIA GPU Example: <br>
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 ```bash
 services:
   ollama:
@@ -307,7 +307,7 @@ nano docker-compose.yml
 
 &emsp; Copy and paste the following into your docker-compose.yml file: <br>
 &emsp; NVIDIA GPU Example: <br>
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 ```bash
 services:
   open-webui:
