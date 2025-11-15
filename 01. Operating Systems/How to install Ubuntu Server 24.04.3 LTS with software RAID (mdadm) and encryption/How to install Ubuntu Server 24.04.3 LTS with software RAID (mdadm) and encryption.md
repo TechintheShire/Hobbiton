@@ -565,7 +565,7 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0022
 ```
 Edit the two PAM configuration files: <br>
 
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 
 ```bash
 sudo nano /etc/pam.d/common-session
@@ -585,7 +585,7 @@ sudo touch /etc/sudoers.d/thomas
 ```
 &emsp; Use nano to open and edit our newly created file. <br>
 
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 
 ```bash
 sudo nano /etc/sudoers.d/username
