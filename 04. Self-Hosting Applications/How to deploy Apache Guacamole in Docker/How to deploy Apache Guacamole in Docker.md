@@ -87,7 +87,7 @@ sudo chown root:root docker-compose.yml && sudo chmod 600 docker-compose.yml
 ### [4] Modify the docker-compose.yml file.
 
 &emsp; > Modify/add passwords for `POSTGRES_PASSWORD:` and `POSTGRESQL_PASSWORD:` in the docker-compose.yml file. <br>
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 ```bash
 sudo nano docker-compose.yml
 ```
