@@ -358,7 +358,7 @@ ll /etc/ | grep -i fstab*
 sudo nano /etc/fstab
 ```
 
-> ℹ️ To save changes in nano, select `Ctrl+x`, then `Shift+Y`, then `Enter`. <br>
+> ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 
 &emsp; > Add the following line at the bottom of your fstab (replacing any variables to match your environment, see syntax below for additional guidance). <br>
 
