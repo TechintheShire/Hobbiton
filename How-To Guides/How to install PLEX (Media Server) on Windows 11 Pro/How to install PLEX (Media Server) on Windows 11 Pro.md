@@ -15,15 +15,15 @@ Rumble <br>
 
 ### Table of Contents
 
-&emsp; [01] Create a standard (non-administrator) user account on your Windows 11 Pro machine. <br>
-&emsp; [02] Create a PLEX account. <br>
-&emsp; [03] Download the PLEX .exe installer. <br>
-&emsp; [04] Start the PLEX .exe installer. <br>
-&emsp; [05] Sign in and initialize PLEX. <br>
-&emsp; [06] Activate (enable) Two-Factor Authentication (2FA). <br>
-&emsp; [07] How to Add Libraries. <br>
-&emsp; [08] How to Remove Libraries. <br>
-&emsp; [09] (Optional) Enable 'Remote Access'. <br>
+&emsp; [1] Create a standard (non-administrator) user account on your Windows 11 Pro machine. <br>
+&emsp; [2] Create a PLEX account. <br>
+&emsp; [3] Download the PLEX .exe installer. <br>
+&emsp; [4] Start the PLEX .exe installer. <br>
+&emsp; [5] Sign in and initialize PLEX. <br>
+&emsp; [6] Activate (enable) Two-Factor Authentication (2FA). <br>
+&emsp; [7] How to Add Libraries. <br>
+&emsp; [8] How to Remove Libraries. <br>
+&emsp; [9] (Optional) Enable 'Remote Access'. <br>
 &emsp; [10] Configure PLEX media server Settings. <br>
 
 &emsp; [#] Appendix <br>
