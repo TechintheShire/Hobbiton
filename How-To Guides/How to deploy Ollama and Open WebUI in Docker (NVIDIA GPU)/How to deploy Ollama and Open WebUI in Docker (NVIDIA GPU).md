@@ -244,11 +244,11 @@ cd ~/ollama
 ```
 &emsp; Create a Docker Compose file for Ollama: <br>
 ```bash
-nano docker-compose.yml
+nano docker-compose.yaml
 ```
 <br>
 
-&emsp; Copy and paste the following into your docker-compose.yml file. <br>
+&emsp; Copy and paste the following into your docker-compose.yaml file. <br>
 &emsp; NVIDIA GPU Example: <br>
 > ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 ```bash
@@ -301,11 +301,11 @@ cd ~/open-webui
 ```
 &emsp; Create a Docker Compose file for Open WebUI: <br>
 ```bash
-nano docker-compose.yml
+nano docker-compose.yaml
 ```
 <br>
 
-&emsp; Copy and paste the following into your docker-compose.yml file: <br>
+&emsp; Copy and paste the following into your docker-compose.yaml file: <br>
 &emsp; NVIDIA GPU Example: <br>
 > ℹ️ To save changes in nano, select `Ctrl+x`, then `y`, then `Enter`. <br>
 ```bash
