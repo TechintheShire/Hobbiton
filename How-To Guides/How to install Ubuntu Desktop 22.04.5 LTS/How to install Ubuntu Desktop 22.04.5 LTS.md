@@ -30,8 +30,8 @@ https://releases.ubuntu.com/jammy/
 ```
 &emsp; > Select '`64-bit PC (AMD64) desktop image`' or '`64-bit PC (AMD64) server install image`'. <br>
 <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20084629%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20084629%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20084629%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20084629%20v2.png" height="270"/>
 </a><br>
 <br>
 
@@ -62,8 +62,8 @@ https://rufus.ie/en/#download
 &emsp; Under most circumstances, leave everything else at the default settings. <br>
 &emsp; Select '`START`' to burn the Windows 11 ISO to your USB. <br>
 <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20094148%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20094148%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20094148%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20094148%20v2.png" height="270"/>
 </a><br>
 
 ***
@@ -75,23 +75,23 @@ https://rufus.ie/en/#download
 > ℹ️ In my example, I'm installing Ubuntu Desktop 22.04.5 LTS on a VMware Virtual Machine. <br>
 
 &emsp; > Boot from your Ubuntu Desktop 22.04.5 LTS ISO: <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085104%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085104%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085104%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085104%20v2.png" height="270"/>
 </a><br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085152%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085152%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085152%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085152%20v2.png" height="270"/>
 </a><br>
 
 ***
 &emsp; > Select your language, then '`Install Ubuntu`'. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085402%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085402%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085402%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085402%20v2.png" height="270"/>
 </a><br>
 
 ***
 &emsp; > Select your keyboard layout, then '`Continue`'. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085423%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085423%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085423%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085423%20v2.png" height="270"/>
 </a><br>
 
 ***
@@ -100,27 +100,27 @@ https://rufus.ie/en/#download
 &emsp;&emsp; > '`Download updates while installing Ubuntu`'. <br>
 &emsp;&emsp; > '`Install third-party software for graphics and Wi-Fi hardware and additional media formats`'. <br>
 &emsp; > Then, select '`Continue`'. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085450%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085450%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085450%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085450%20v2.png" height="270"/>
 </a><br>
 
 ***
 &emsp; > Select '`Erase disk and install Ubuntu`'. <br>
 &emsp; > Then, select '`Install Now`'. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085528%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085528%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085528%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085528%20v2.png" height="270"/>
 </a><br>
 
 ***
 &emsp; > Then, select '`Continue`'. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085549%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085549%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085549%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085549%20v2.png" height="270"/>
 </a><br>
 
 ***
 &emsp; > Select your timezone, then select '`Continue`'. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085621%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085621%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085621%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085621%20v2.png" height="270"/>
 </a><br>
 
 ***
@@ -133,17 +133,17 @@ https://rufus.ie/en/#download
 
 > ℹ️ Assigning a computer name (hostname) will make identification, DNS, and self-hosting apps in the future easier. <br>
 
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085741%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20085741%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085741%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20085741%20v2.png" height="270"/>
 </a><br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090046%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090046%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090046%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090046%20v2.png" height="270"/>
 </a><br>
 
 ***
 &emsp; > Once installation is complete, select '`Restart Now`'. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090144%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090144%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090144%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090144%20v2.png" height="270"/>
 </a><br>
 
 ***
@@ -151,14 +151,14 @@ https://rufus.ie/en/#download
 
 > ℹ️ Remove the USB drive from your Ubuntu machine (or eject/disable the CD/DVD drive, if you're using a Virtual Machine). <br>
 
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090211%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090211%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090211%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090211%20v2.png" height="270"/>
 </a><br>
 
 ***
 &emsp; > Once Ubuntu has finished rebooting, you'll see a login screen. <br>
-<a href="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090320%20v2.png">
-  <img src="https://github.com/TechintheShire/Workspace/blob/main/How-To%20Guides/How%20to%20install%20Ubuntu%20Desktop%2022.04.5%20LTS/Icons%20and%20Screenshots/Screenshot%202025-12-09%20090320%20v2.png" height="270"/>
+<a href="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090320%20v2.png">
+  <img src="./Icons%20and%20Screenshots/Screenshot%202025-12-09%20090320%20v2.png" height="270"/>
 </a><br>
 
 ***
