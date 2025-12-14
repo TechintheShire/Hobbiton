@@ -378,6 +378,10 @@ sudo docker exec ollama ollama list
 ```bash
 sudo docker exec ollama ollama pull tinyllama:1.1b
 ```
+&emsp; List model information (ex. quantization) Example: <br>
+```bash
+sudo docker exec ollama ollama show tinyllama:1.1b
+```
 &emsp; Remove a model Example: <br>
 ```bash
 sudo docker exec ollama ollama rm tinyllama:1.1b
