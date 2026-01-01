@@ -85,7 +85,7 @@ ubuntu-drivers devices
 ```
 &emsp; Example Output: <br>
 
-> ℹ️ non-free ≠ costs money, it simply means, “This driver is proprietary (from NVIDIA), not open-source.” <br>
+> ℹ️ distro non-free ≠ costs money, it simply means, “This driver is proprietary (from NVIDIA), not open-source.” <br>
 
 ```bash
 wraith@wraith:~$ ubuntu-drivers devices
