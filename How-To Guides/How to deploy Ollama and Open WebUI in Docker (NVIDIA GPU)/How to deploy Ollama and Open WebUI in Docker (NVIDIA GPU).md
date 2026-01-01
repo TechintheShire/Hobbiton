@@ -84,6 +84,9 @@ Rumble <br>
 ubuntu-drivers devices
 ```
 &emsp; Example Output: <br>
+
+> ℹ️ non-free ≠ costs money, it simply means, “This driver is proprietary (from NVIDIA), not open-source.” <br>
+
 ```bash
 wraith@wraith:~$ ubuntu-drivers devices
 == /sys/devices/pci0000:00/0000:00:03.1/0000:06:00.0 ==
