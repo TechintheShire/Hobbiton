@@ -1,6 +1,6 @@
 <img src="./Media/152025114633%20v2%20-%20(1)%20-%20Windows%2011.png"/> <br>
 
-# How to install Windows 11 Pro
+# How to Install Windows 11 Pro
 
 <!--
 YouTube <br>
